@@ -1,0 +1,62 @@
+DEVICE BEING USED:  cpu 
+ORIGINAL UN-QUANTIZED MODEL: 
+ VAE(
+  (fc1): Linear(in_features=784, out_features=600, bias=True)
+  (fc21): Linear(in_features=600, out_features=100, bias=True)
+  (fc22): Linear(in_features=600, out_features=100, bias=True)
+  (fc3): Linear(in_features=100, out_features=600, bias=True)
+  (fc4): Linear(in_features=600, out_features=784, bias=True)
+) 
+====> Test set loss: 186.7306
+====> Test set loss: 182.4297
+====> Test set loss: 179.1589
+====> Test set loss: 177.6643
+====> Test set loss: 176.7849
+====> Test set loss: 176.5055
+====> Test set loss: 175.9553
+====> Test set loss: 175.5262
+====> Test set loss: 175.2887
+====> Test set loss: 175.3631
+====> Test set loss: 175.1156
+====> Test set loss: 174.7519
+====> Test set loss: 174.9104
+====> Test set loss: 174.4726
+====> Test set loss: 174.4162
+THE TOTAL EXECUTION TIME OF UN-QUANTIZED MODEL:  122.02850723266602 SECONDS 
+QUANTIZER WRAPPED MODEL WITH QAT_Quantizer: 
+ VAE(
+  (fc1): QuantizerModuleWrapper(
+    (module): Linear(in_features=784, out_features=600, bias=True)
+  )
+  (fc21): QuantizerModuleWrapper(
+    (module): Linear(in_features=600, out_features=100, bias=True)
+  )
+  (fc22): QuantizerModuleWrapper(
+    (module): Linear(in_features=600, out_features=100, bias=True)
+  )
+  (fc3): QuantizerModuleWrapper(
+    (module): Linear(in_features=100, out_features=600, bias=True)
+  )
+  (fc4): QuantizerModuleWrapper(
+    (module): Linear(in_features=600, out_features=784, bias=True)
+  )
+) 
+====> Test set loss: 174.6944
+====> Test set loss: 174.5514
+====> Test set loss: 174.4235
+====> Test set loss: 174.3379
+====> Test set loss: 174.3069
+====> Test set loss: 174.2356
+====> Test set loss: 174.1420
+====> Test set loss: 173.8747
+====> Test set loss: 174.1709
+====> Test set loss: 174.1648
+====> Test set loss: 174.0986
+====> Test set loss: 174.2031
+====> Test set loss: 174.0162
+====> Test set loss: 174.0749
+====> Test set loss: 174.1958
+THE TOTAL EXECUTION TIME OF QUANTIZED MODEL:  156.99381828308105 SECONDS 
+[2022-10-13 00:10:46] Model state_dict saved to ./config_log/vae_model.pth
+[2022-10-13 00:10:46] Mask dict saved to ./config_log/vae_calibration.pth
+calibration_config:  {'fc1': {'output_bits': 8, 'tracked_min_output': -29.901214599609375, 'tracked_max_output': 17.707223892211914}, 'fc21': {'output_bits': 8, 'tracked_min_output': -4.985050201416016, 'tracked_max_output': 1.362680196762085}, 'fc22': {'output_bits': 8, 'tracked_min_output': -6.402463912963867, 'tracked_max_output': 0.19731195271015167}, 'fc3': {'output_bits': 8, 'tracked_min_output': -28.998123168945312, 'tracked_max_output': 12.431182861328125}, 'fc4': {'output_bits': 8, 'tracked_min_output': -89.97931671142578, 'tracked_max_output': 5.895782947540283}}
