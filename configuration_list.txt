@@ -1,0 +1,40 @@
+# Specifying two sets of configuration
+if quantization_used != "NaiveQuantizer":
+
+   if config_choice == "config_list_1":
+   	# Defining the configuration list for pruning
+        configuration_list = [{
+                'quant_types': ['input', 'weight'],
+                'quant_bits': {'input': 8, 'weight': 8},
+                'op_types': ['Linear']
+            },
+            {
+                 'quant_types': ['output'],
+                 'quant_bits': {'output': 8},
+                 'op_types': ['Linear']
+             }]
+
+   else:
+       # Defining the alternate configuration list for pruning
+       configuration_list = [{
+                 'quant_types': ['input', 'weight'],
+                 'quant_bits': {'input': 8, 'weight': 8},
+                 'op_names': ['fc1', 'fc4']
+             }]
+
+else:
+    if config_choice == "config_list_1":
+       # Defining the configuration list for pruning
+       configuration_list = [{
+                 'quant_types': ['weight'],
+                 'quant_bits': {'weight': 8},
+                ' op_types': ['Linear']
+             }]
+
+       else:
+            # Defining the alternate configuration list for pruning
+            configuration_list = [{
+                 'quant_types': ['weight'],
+                 'quant_bits': {'weight': 8},
+                 'op_names': ['fc1', 'fc4']
+             }]

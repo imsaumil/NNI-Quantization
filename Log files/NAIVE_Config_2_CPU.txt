@@ -1,0 +1,53 @@
+DEVICE BEING USED:  cpu 
+ORIGINAL UN-QUANTIZED MODEL: 
+ VAE(
+  (fc1): Linear(in_features=784, out_features=600, bias=True)
+  (fc21): Linear(in_features=600, out_features=100, bias=True)
+  (fc22): Linear(in_features=600, out_features=100, bias=True)
+  (fc3): Linear(in_features=100, out_features=600, bias=True)
+  (fc4): Linear(in_features=600, out_features=784, bias=True)
+) 
+====> Test set loss: 186.7306
+====> Test set loss: 182.4297
+====> Test set loss: 179.1589
+====> Test set loss: 177.6643
+====> Test set loss: 176.7849
+====> Test set loss: 176.5055
+====> Test set loss: 175.9553
+====> Test set loss: 175.5262
+====> Test set loss: 175.2887
+====> Test set loss: 175.3631
+====> Test set loss: 175.1156
+====> Test set loss: 174.7519
+====> Test set loss: 174.9104
+====> Test set loss: 174.4726
+====> Test set loss: 174.4162
+THE TOTAL EXECUTION TIME OF UN-QUANTIZED MODEL:  124.14593029022217 SECONDS 
+QUANTIZER WRAPPED MODEL WITH NaiveQuantizer: 
+ VAE(
+  (fc1): QuantizerModuleWrapper(
+    (module): Linear(in_features=784, out_features=600, bias=True)
+  )
+  (fc21): Linear(in_features=600, out_features=100, bias=True)
+  (fc22): Linear(in_features=600, out_features=100, bias=True)
+  (fc3): Linear(in_features=100, out_features=600, bias=True)
+  (fc4): QuantizerModuleWrapper(
+    (module): Linear(in_features=600, out_features=784, bias=True)
+  )
+) 
+====> Test set loss: 174.5376
+====> Test set loss: 174.1897
+====> Test set loss: 174.0917
+====> Test set loss: 174.1465
+====> Test set loss: 173.9784
+====> Test set loss: 174.0611
+====> Test set loss: 174.0984
+====> Test set loss: 173.8680
+====> Test set loss: 174.2688
+====> Test set loss: 174.1880
+====> Test set loss: 174.1602
+====> Test set loss: 174.0770
+====> Test set loss: 173.8486
+====> Test set loss: 174.1084
+====> Test set loss: 173.9246
+THE TOTAL EXECUTION TIME OF QUANTIZED MODEL:  125.38848614692688 SECONDS 

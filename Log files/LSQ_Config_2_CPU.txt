@@ -1,0 +1,56 @@
+DEVICE BEING USED:  cpu 
+ORIGINAL UN-QUANTIZED MODEL: 
+ VAE(
+  (fc1): Linear(in_features=784, out_features=600, bias=True)
+  (fc21): Linear(in_features=600, out_features=100, bias=True)
+  (fc22): Linear(in_features=600, out_features=100, bias=True)
+  (fc3): Linear(in_features=100, out_features=600, bias=True)
+  (fc4): Linear(in_features=600, out_features=784, bias=True)
+) 
+====> Test set loss: 186.7306
+====> Test set loss: 182.4297
+====> Test set loss: 179.1589
+====> Test set loss: 177.6643
+====> Test set loss: 176.7849
+====> Test set loss: 176.5055
+====> Test set loss: 175.9553
+====> Test set loss: 175.5262
+====> Test set loss: 175.2887
+====> Test set loss: 175.3631
+====> Test set loss: 175.1156
+====> Test set loss: 174.7519
+====> Test set loss: 174.9104
+====> Test set loss: 174.4726
+====> Test set loss: 174.4162
+THE TOTAL EXECUTION TIME OF UN-QUANTIZED MODEL:  122.04817485809326 SECONDS 
+QUANTIZER WRAPPED MODEL WITH LsqQuantizer: 
+ VAE(
+  (fc1): QuantizerModuleWrapper(
+    (module): Linear(in_features=784, out_features=600, bias=True)
+  )
+  (fc21): Linear(in_features=600, out_features=100, bias=True)
+  (fc22): Linear(in_features=600, out_features=100, bias=True)
+  (fc3): Linear(in_features=100, out_features=600, bias=True)
+  (fc4): QuantizerModuleWrapper(
+    (module): Linear(in_features=600, out_features=784, bias=True)
+  )
+) 
+====> Test set loss: 175.3647
+====> Test set loss: 174.9847
+====> Test set loss: 174.8296
+====> Test set loss: 174.8576
+====> Test set loss: 174.7421
+====> Test set loss: 174.7258
+====> Test set loss: 174.6720
+====> Test set loss: 174.5530
+====> Test set loss: 174.6832
+====> Test set loss: 174.6034
+====> Test set loss: 174.5579
+====> Test set loss: 174.5604
+====> Test set loss: 174.5900
+====> Test set loss: 174.5634
+====> Test set loss: 174.6291
+THE TOTAL EXECUTION TIME OF QUANTIZED MODEL:  159.8057827949524 SECONDS 
+[2022-10-13 00:32:47] Model state_dict saved to ./config_log/vae_model.pth
+[2022-10-13 00:32:47] Mask dict saved to ./config_log/vae_calibration.pth
+calibration_config:  {'fc1': {'weight_bits': 8, 'tracked_min_input': -3.2690975666046143, 'tracked_max_input': 3.2690975666046143, 'input_bits': 8}, 'fc4': {'weight_bits': 8, 'tracked_min_input': -2.372662305831909, 'tracked_max_input': 2.372662305831909, 'input_bits': 8}}
